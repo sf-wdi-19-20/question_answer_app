@@ -24,9 +24,7 @@ app.get('/api/questions', function (req, res) {
 app.post('/api/questions', function (req, res) {
   // create new question with data from the body of the request (`req.body`)
   // body should contain the question text itself
-  var newQuestion = new Question({
-    text: req.body.text
-  });
+  var newQuestion = new Question(req.body);
 
   // save new question
   newQuestion.save(function (err, savedQuestion) {
